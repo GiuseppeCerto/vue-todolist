@@ -38,13 +38,16 @@ createApp({
 			this.toDoTasks.push({text: newToDoTask, done: false}) 
 			this.inputValue = ''
 		},
+        addTextClass(){
+            this.done = true
+            console.log(this.done)
+        },
 		removeTask(startIndex) {
 			console.log(
-				'elimino il task con indice:',
 				startIndex,
-				this.tasks[startIndex]
+				this.toDoTasks[startIndex]
 			)
-			this.tasks.splice(startIndex, 1)
+			this.toDoTasks.splice(startIndex, 1)
 		},
 	},
 }).mount('#app')
