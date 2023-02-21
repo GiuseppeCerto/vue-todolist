@@ -38,15 +38,17 @@ createApp({
 			this.toDoTasks.push({text: newToDoTask, done: false}) 
 			this.inputValue = ''
 		},
-        addTextClass(){
-            this.done = true
-            console.log(this.done)
+        addTextClass(classIndex){
+
+            if(!this.toDoTasks[classIndex].done){
+
+                this.toDoTasks[classIndex].done = true
+            }else{
+                this.toDoTasks[classIndex].done = false
+            }
         },
 		removeTask(startIndex) {
-			console.log(
-				startIndex,
-				this.toDoTasks[startIndex]
-			)
+
 			this.toDoTasks.splice(startIndex, 1)
 		},
 	},
